@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .ring{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: -30px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid rgb(36, 236, 255);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.container .ring::before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #24ecff;
+    box-shadow: 0 0 0 5px #24ecff33,
+                0 0 0 10px #24ecff22,
+                0 0 0 20px #24ecff11;
+}
+
+.container .ring:nth-child(2){
+    animation: animate2 4s linear infinite;
+    animation-delay: -1s;
+    border-top:4px solid transparent;
+    border-left:4px solid rgb(147, 255, 45);
+
+}
+
+.container .ring:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    left: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #93ff2d;
+    box-shadow: 0 0 0 5px #93ff2d33,
+                 0 0 0 10px #93ff2e22,
+                 0 0 0 20px rgba(147, 255, 45, 0.067);
+}
+
+@keyframes animate2{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.container .ring:nth-child(3){
+    animation: animate2 4s linear infinite;
+    animation-delay: -3s;
+    position: absolute;
+    top: -66.6px;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #e11cf8;
+}
+
+.container .ring:nth-child(3)::before{
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    left: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgb(225, 28, 248);
+    box-shadow: 0 0 0 5px rgba(225, 28, 248, 0.2),
+                0 0 0 10px rgba(225, 28, 248, 0.133),
+                0 0 0 20px rgba(225, 28, 248, 0.067);
+}
+
+.container p{
+    position: absolute;
+    color: #FFF;
+    font-size: 1.5em;
+    font-family: consolas;
+    bottom: -85px;
+    letter-spacing: 0.15em;
+}
